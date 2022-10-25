@@ -1,6 +1,9 @@
-import { List } from "./List/List";
-import Interactive from "./Interactive/Interactive";
+import React from "react";
+import ReactDOM  from "react-dom/client";
 
-let app = new List();
-app.render("React", "Angular", "Vue", "Karo");
-Interactive();
+
+const root =
+	ReactDOM.createRoot(document.getElementById('main'));
+const element =
+	React.createElement("h1", { id: "title" }, "Welcome to React");
+root.render(element);
