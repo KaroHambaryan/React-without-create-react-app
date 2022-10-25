@@ -15,13 +15,17 @@ module.exports = {
 		rules: [
 			{
 				test: /\.css$/,
-				use:[MiniCssExtractPlugin.loader ,'css-loader']
+				use: [MiniCssExtractPlugin.loader, 'css-loader']
+			},
+			{
+				test: /\.js|jsx$/,
+				use: ['babel-loader']
 			}
 		]
 	},
 	devServer: {
 		static: {
-			directory: path.resolve(__dirname,'./dist'),
+			directory: path.resolve(__dirname, './dist'),
 		},
 		port: 3004,
 	},
@@ -32,7 +36,7 @@ module.exports = {
 		new Terser(),
 		new CleanWebpackPlugin(),
 		new HtmlWebpackPlugin({
-			template:'./src/index.html'
+			template: './src/index.html'
 		})
 	]
 }
